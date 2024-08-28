@@ -7,9 +7,7 @@ public class ImprimirTablero
 {
     public static void Imprimir()
     {
-        bool[,] b = InicioTablero.CrearTablero();
-        /*int width //variabe que representa el ancho del tablero
-        int height //variabe que representa altura del tablero*/
+        bool[,] b = InicioTablero.CrearTablero(); //llama al metodo/clase responsable de inicializar un tablero
         int width = b.GetLength(0);
         int height = b.GetLength(1);
         while (true)
@@ -32,10 +30,7 @@ public class ImprimirTablero
                 s.Append("\n");
             }
             Console.WriteLine(s.ToString());
-            //=================================================
-            //Invocar método para calcular siguiente generación
-            Funcionamiento.SiguienteIteracion(b);
-            //=================================================
+            b = Funcionamiento.SiguienteIteracion(b); // método para calcular siguiente generación
             Thread.Sleep(300);
         }
     }

@@ -6,10 +6,7 @@ namespace Ucu.Poo.GameOfLife
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
-                ImprimirTablero.Imprimir();
-            }
+            ImprimirTablero.Imprimir();
 
         }
     }
