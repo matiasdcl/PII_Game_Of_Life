@@ -5,7 +5,7 @@ public class InicioTablero
 {
     public static bool[,] CrearTablero()
     {
-        string url = "C:/Users/matia/c#_github/PII_Game_Of_Life/src/Library/tablero.txt";
+        string url = "C:/Users/matia/c#_github/PII_Game_Of_Life/src/Library/tablero.txt"; //ruta relativa
         string content = File.ReadAllText(url);
         string[] contentLines = content.Split('\n');
         bool[,] board = new bool[contentLines.Length, contentLines[0].Length];

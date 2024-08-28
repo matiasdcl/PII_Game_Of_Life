@@ -1,14 +1,16 @@
+using System;
+
 namespace Ucu.Poo.GameOfLife;
 
 public class Funcionamiento
 {
-    public static bool[,] SiguienteIteracion(bool[,] tablero)
+    public static bool[,] SiguienteIteracion(bool[,] tablero) //Recibe un tablero
     {
         bool[,] gameBoard = tablero;
         int boardWidth = gameBoard.GetLength(0);
         int boardHeight = gameBoard.GetLength(1);
 
-        bool[,] cloneboard = new bool[boardWidth, boardHeight];
+        bool[,] cloneboard = new bool[boardWidth, boardHeight]; //realiza cambios y los guarda en un tablero paralelo
         for (int x = 0; x < boardWidth; x++)
         {
             for (int y = 0; y < boardHeight; y++)
@@ -51,6 +53,6 @@ public class Funcionamiento
             }
         }
         gameBoard = cloneboard;
-        return gameBoard;
+        return gameBoard; //retorna tablero actualizado para ser impreso
     }
 }
