@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 
 namespace Ucu.Poo.GameOfLife
 {
@@ -6,7 +6,11 @@ namespace Ucu.Poo.GameOfLife
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            while (true)
+            {
+                ImprimirTablero.Imprimir();
+            }
+
         }
     }
 }
