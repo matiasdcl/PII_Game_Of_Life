@@ -28,6 +28,6 @@ public class ImprimirTablero
             s.Append("\n");
         }
         Console.WriteLine(s.ToString());
-        Thread.Sleep(1000);
+        Thread.Sleep(300);
     }
 }
