@@ -1,8 +1,8 @@
 namespace Ucu.Poo.GameOfLife;
 
-public class Funcionamiento
+public class Logica
 {
-    public static void SiguienteIteracion(Tablero tablero) //Recibe un tablero
+    public static void CalcularSiguiente(Tablero tablero) //Recibe un tablero
     {
         bool[,] gameBoard = tablero.Board;
         int boardWidth = gameBoard.GetLength(0);

@@ -5,7 +5,7 @@ namespace Ucu.Poo.GameOfLife;
 
 public class ImprimirTablero
 {
-    public static void Imprimir(Tablero tablero)
+    public static void ImprimirEnConsola(Tablero tablero)
     {
         bool[,] b = tablero.Board; //llama al metodo/clase responsable de inicializar un tablero
         int width = b.GetLength(0);
@@ -28,6 +28,6 @@ public class ImprimirTablero
             s.Append("\n");
         }
         Console.WriteLine(s.ToString());
-        Thread.Sleep(100);
-    } 
+        Thread.Sleep(1000);
+    }
 }

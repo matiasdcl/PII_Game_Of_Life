@@ -8,8 +8,8 @@
             Tablero tablero = new Tablero(matriz);
             while(true)
             {
-                ImprimirTablero.Imprimir(tablero); 
-                Funcionamiento.SiguienteIteracion(tablero); 
+                ImprimirTablero.ImprimirEnConsola(tablero); 
+                Logica.CalcularSiguiente(tablero); 
             }
         }
     }
