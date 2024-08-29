@@ -1,13 +1,16 @@
-﻿
-
-namespace Ucu.Poo.GameOfLife
+﻿namespace Ucu.Poo.GameOfLife
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            ImprimirTablero.Imprimir();
-
+            string[] matriz = Lector.Leer("board.txt");
+            Tablero tablero = new Tablero(matriz);
+            while(true)
+            {
+                ImprimirTablero.Imprimir(tablero); 
+                Funcionamiento.SiguienteIteracion(tablero); 
+            }
         }
     }
 }

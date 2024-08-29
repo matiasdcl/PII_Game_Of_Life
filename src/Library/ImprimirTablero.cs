@@ -5,33 +5,29 @@ namespace Ucu.Poo.GameOfLife;
 
 public class ImprimirTablero
 {
-    public static void Imprimir()
+    public static void Imprimir(Tablero tablero)
     {
-        bool[,] b = InicioTablero.CrearTablero(); //llama al metodo/clase responsable de inicializar un tablero
+        bool[,] b = tablero.Board; //llama al metodo/clase responsable de inicializar un tablero
         int width = b.GetLength(0);
         int height = b.GetLength(1);
-        while (true)
+        Console.Clear();
+        StringBuilder s = new StringBuilder();
+        for (int y = 0; y<height;y++)
         {
-            Console.Clear();
-            StringBuilder s = new StringBuilder();
-            for (int y = 0; y<height;y++)
+            for (int x = 0; x<width; x++)
             {
-                for (int x = 0; x<width; x++)
+                if(b[x,y])
                 {
-                    if(b[x,y])
-                    {
-                        s.Append("|X|");
-                    }
-                    else
-                    {
-                        s.Append("___");
-                    }
+                    s.Append("|X|");
                 }
-                s.Append("\n");
+                else
+                {
+                    s.Append("___");
+                }
             }
-            Console.WriteLine(s.ToString());
-            b = Funcionamiento.SiguienteIteracion(b); // método para calcular siguiente generación
-            Thread.Sleep(300);
+            s.Append("\n");
         }
-    }
+        Console.WriteLine(s.ToString());
+        Thread.Sleep(100);
+    } 
 }
