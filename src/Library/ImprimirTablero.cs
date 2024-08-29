@@ -2,15 +2,20 @@ using System;
 using System.Text;
 using System.Threading;
 namespace Ucu.Poo.GameOfLife;
-
+/*
+ImprimirTablero tiene la rsponsabilidad de mostrar el tablero. Su colaborador es Tablero.
+El único motivo de cambio que tiene esta clase sería agregar un nuevo medio de impresión, cumpliendo 
+con el SRP.
+ */
 public class ImprimirTablero
 {
-    public static void ImprimirEnConsola(Tablero tablero)
+    public static void ImprimirEnConsola(Tablero tablero)  //Imprime el tablero en la consola
     {
-        bool[,] b = tablero.Board; //llama al metodo/clase responsable de inicializar un tablero
+        bool[,] b = tablero.Board;
         int width = b.GetLength(0);
         int height = b.GetLength(1);
         Console.Clear();
+        Console.WriteLine("\x1b[3J");
         StringBuilder s = new StringBuilder();
         for (int y = 0; y<height;y++)
         {
@@ -28,6 +33,6 @@ public class ImprimirTablero
             s.Append("\n");
         }
         Console.WriteLine(s.ToString());
-        Thread.Sleep(300);
+        Thread.Sleep(500);
     }
 }

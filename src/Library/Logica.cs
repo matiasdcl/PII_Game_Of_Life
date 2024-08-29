@@ -1,14 +1,18 @@
 namespace Ucu.Poo.GameOfLife;
-
+/*
+Logica tienen como responsabilidad calcular el siguiente estado del tablero.
+Solo se modificaría esta clase si se desea cambiar algo en cuanto al funcionamiento del juego.
+Tablero es su colaborador.
+*/
 public class Logica
 {
-    public static void CalcularSiguiente(Tablero tablero) //Recibe un tablero
+    public static void CalcularSiguiente(Tablero tablero) //Calcula el siguiente estado del tablero
     {
         bool[,] gameBoard = tablero.Board;
         int boardWidth = gameBoard.GetLength(0);
         int boardHeight = gameBoard.GetLength(1);
         
-        bool[,] cloneboard = new bool[boardWidth, boardHeight]; //realiza cambios y los guarda en un tablero paralelo
+        bool[,] cloneboard = new bool[boardWidth, boardHeight];
         for (int x = 0; x < boardWidth; x++)
         {
             for (int y = 0; y < boardHeight; y++)

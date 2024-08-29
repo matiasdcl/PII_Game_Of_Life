@@ -1,5 +1,8 @@
 namespace Ucu.Poo.GameOfLife;
-
+/*
+La responsabilidad de Tablero es crear un tablero. Solo se modificaría este código si se 
+deseara modificar el contenido o la distribucion del tablero, cumple con el SRP.
+*/
 public class Tablero
 {
     private bool[,] board;
@@ -8,7 +11,7 @@ public class Tablero
         get { return this.board; }
         set { this.board = value; }
     }
-    public Tablero(string[] contentLines)
+    public Tablero(string[] contentLines) //constructor de Tablero
     {
         this.board = new bool[contentLines.Length, contentLines[0].Length];
         for (int  y = 0 ; y<contentLines.Length;y++)
